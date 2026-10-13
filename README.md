@@ -1,5 +1,6 @@
 # 🛒 **3MARKET - TIENDA VIRTUAL**
 
+
 ## 🧩 Planteamiento del problema
 
 Actualmente, muchas PYMES venden sus productos de forma manual o con diferentes herramientas, como mensajes de chat, cuadernos u hojas de cálculo, lo cual provoca algunas dificultades frecuentes, tales como:
@@ -18,11 +19,11 @@ Actualmente, muchas PYMES venden sus productos de forma manual o con diferentes 
 
 En conclusión, estas dificultades reducen la competitividad de las PYMES frente a negocios que ya venden en línea.
   
-## ¿Qué es 3Market?
+## 🛍️ ¿Qué es 3Market?
 
-3️⃣🛍️ **3Market** es una plataforma web de comercio electrónico (tienda virtual) que permite a los clientes explorar productos, agregarlos al carrito y realizar pedidos de manera rápida y segura. Al mismo tiempo ofrece a los administradores y vendedores herramientas para gestionar inventarios, categorías, clientes, pedidos y reportes de ventas.
+**3Market** es una plataforma web de comercio electrónico (tienda virtual) que permite a los clientes explorar productos, agregarlos al carrito y realizar pedidos de manera rápida y segura. Al mismo tiempo ofrece a los administradores y vendedores herramientas para gestionar inventarios, categorías, clientes, pedidos y reportes de ventas.
 
-## ## ¿Para qué sirve 3Market?
+## ¿Para qué sirve 3Market?
 
 3Market sirve para que una PYME pueda vender en línea y administrar su operación comercial desde un solo sistema. Sus objetivos principales son:
 
