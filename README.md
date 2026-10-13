@@ -18,7 +18,7 @@ Actualmente, muchas PYMES venden sus productos de forma manual o con diferentes 
 
 En conclusión, estas dificultades reducen la competitividad de las PYMES frente a negocios que ya venden en línea.
 
-## Formulación del problema
+## ❓ Formulación del problema
 
 ### Pregunta central
 
