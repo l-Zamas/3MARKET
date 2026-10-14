@@ -74,13 +74,6 @@ En conclusión, estas dificultades reducen la competitividad de las PYMES frente
 
 3Market se construye como una sola aplicación Spring Boot que contiene la interfaz, la lógica de negocio y el acceso a datos. Se compila y se despliega como una única unidad (un solo .jar) y se conecta a una base de datos MySQL.
 
-Se eligió por estas razones:
-
-- Es adecuada para el alcance de un proyecto académico y de una PYME.
-- Es más simple de desarrollar, probar y desplegar que una arquitectura de microservicios.
-- Todos los módulos (usuarios, productos, carrito, pedidos, pagos, reportes) comparten la misma base de datos.
-- Puede dividirse en servicios en el futuro si el negocio crece.
-
 **MVC (Modelo – Vista – Controlador).** Dentro del monolito, el código se organiza en capas con responsabilidades separadas:
 
 | Capa            | Responsabilidad                                                         | Tecnología                 |
@@ -89,3 +82,24 @@ Se eligió por estas razones:
 | **Controlador** | Recibir las peticiones HTTP, invocar la lógica y devolver la vista.     | Spring MVC (`@Controller`) |
 | **Modelo**      | Entidades del negocio, lógica (servicios) y persistencia (repositorios). | Java, Spring Data JPA, MySQL |
 
+Además, se usa Spring Security para la autenticación y la autorización por roles.
+
+**Flujo de una petición** 
+ejemplo: el cliente agrega un producto al carrito:
+
+### Flujo de una petición: agregar un producto al carrito
+
+```mermaid
+flowchart TD
+    A[Cliente / Navegador] -->|Petición HTTP| B[CartController]
+    B -->|Llama al servicio| C[CartService]
+    C -->|Valida reglas de negocio y stock| D{¿Hay stock disponible?}
+    D -->|Sí| E[CartItemRepository]
+    E -->|Guardar o consultar datos| F[(Base de datos MySQL)]
+    F -->|Devuelve resultado| E
+    E --> C
+    C --> B
+    B -->|Agrega datos al Model| G[Vista Thymeleaf: cart.html]
+    G -->|Respuesta HTML renderizada| A
+    D -->|No| H[Mostrar mensaje de error]
+    H --> G
