@@ -84,10 +84,7 @@ En conclusión, estas dificultades reducen la competitividad de las PYMES frente
 
 Además, se usa Spring Security para la autenticación y la autorización por roles.
 
-**Flujo de una petición** 
-ejemplo: el cliente agrega un producto al carrito:
-
-### Flujo de una petición: agregar un producto al carrito
+### Ejemplo de flujo de una petición: un cliente agrega un producto al carrito
 
 ```mermaid
 flowchart TD
@@ -103,3 +100,31 @@ flowchart TD
     G -->|Respuesta HTML renderizada| A
     D -->|No| H[Mostrar mensaje de error]
     H --> G
+
+# 🛠️ Requerimientos funcionales
+
+| Código | Requisito funcional                                                                 | Rol principal            |
+|--------|-------------------------------------------------------------------------------------|--------------------------|
+| RF-01  | Registrar clientes de forma autónoma                                                | Cliente                  |
+| RF-02  | Iniciar sesión con credenciales                                                    | Todos                    |
+| RF-03  | Recuperar contraseña                                                               | Todos                    |
+| RF-04  | Gestionar categorías de productos                                                  | Administrador            |
+| RF-05  | Crear, editar y eliminar productos                                                 | Administrador            |
+| RF-06  | Consultar el catálogo de productos                                                 | Cliente                  |
+| RF-07  | Buscar y filtrar productos por categoría                                           | Cliente                  |
+| RF-08  | Agregar, modificar y eliminar productos del carrito                                | Cliente                  |
+| RF-09  | Generar órdenes de compra                                                          | Cliente                  |
+| RF-10  | Simular el pago de la orden                                                        | Cliente                  |
+| RF-11  | Actualizar el inventario automáticamente tras cada venta                            | Sistema                  |
+| RF-12  | Gestionar los estados del pedido (pendiente, pagado, enviado, entregado, cancelado) | Administrador / Vendedor |
+| RF-13  | Consultar el historial de compras y el estado de los pedidos                       | Cliente                  |
+| RF-14  | Generar reportes de ventas                                                         | Administrador / Vendedor |
+
+# ⚙️ Requerimientos no funcionales
+
+| Código | Categoría          | Requisito                                                                                                                              | Criterio de cumplimiento                                                                                                       |
+|--------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| RNF-01 | **Usabilidad**     | La interfaz debe ser intuitiva y amigable, de modo que cualquier usuario pueda usar la plataforma sin capacitación previa.             | Un cliente puede registrarse, buscar un producto y completar una compra siguiendo el flujo de la interfaz, sin ayuda externa. |
+| RNF-02 | **Disponibilidad** | La plataforma debe estar disponible 24/7 para garantizar el acceso continuo a los usuarios.                                            | El sistema permanece accesible en todo momento, salvo mantenimientos programados y comunicados.                                |
+| RNF-03 | **Seguridad**      | El sistema debe proteger la información y los datos de los usuarios mediante autenticación y autorización.                             | El acceso a cada módulo depende del rol (Administrador, Vendedor o Cliente) y las contraseñas se almacenan cifradas.           |
+| RNF-04 | **Compatibilidad** | La plataforma debe ser compatible con dispositivos móviles y computadores, ofreciendo una experiencia consistente en cualquier lugar. | La interfaz se adapta (diseño responsivo) a distintos tamaños de pantalla y funciona en los navegadores más usados.            |
