@@ -67,3 +67,25 @@ En conclusión, estas dificultades reducen la competitividad de las PYMES frente
 - Simplificar la administración para vendedores y administradores, con flujos claros de estados de pedido.
 - Apoyar la toma de decisiones mediante reportes de ventas e historial de compras por cliente.
 - Proteger la información con autenticación, roles y permisos de acceso.
+
+# 🏗️ Arquitectura del proyecto 3Market
+
+#### Arquitectura: monolítica con patrón MVC
+
+3Market se construye como una sola aplicación Spring Boot que contiene la interfaz, la lógica de negocio y el acceso a datos. Se compila y se despliega como una única unidad (un solo .jar) y se conecta a una base de datos MySQL.
+
+Se eligió por estas razones:
+
+- Es adecuada para el alcance de un proyecto académico y de una PYME.
+- Es más simple de desarrollar, probar y desplegar que una arquitectura de microservicios.
+- Todos los módulos (usuarios, productos, carrito, pedidos, pagos, reportes) comparten la misma base de datos.
+- Puede dividirse en servicios en el futuro si el negocio crece.
+
+**MVC (Modelo – Vista – Controlador).** Dentro del monolito, el código se organiza en capas con responsabilidades separadas:
+
+| Capa            | Responsabilidad                                                         | Tecnología                 |
+|-----------------|-------------------------------------------------------------------------|----------------------------|
+| **Vista**       | Mostrar la interfaz al usuario (catálogo, carrito, paneles).            | Thymeleaf, HTML, CSS       |
+| **Controlador** | Recibir las peticiones HTTP, invocar la lógica y devolver la vista.     | Spring MVC (`@Controller`) |
+| **Modelo**      | Entidades del negocio, lógica (servicios) y persistencia (repositorios). | Java, Spring Data JPA, MySQL |
+
