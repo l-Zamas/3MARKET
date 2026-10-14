@@ -100,8 +100,11 @@ flowchart TD
     G -->|Respuesta HTML renderizada| A
     D -->|No| H[Mostrar mensaje de error]
     H --> G
+```
 
-# 🛠️ Requerimientos funcionales
+# 📋 Requerimientos del sistema
+
+## 🛠️ Requerimientos funcionales
 
 | Código | Requisito funcional                                                                 | Rol principal            |
 |--------|-------------------------------------------------------------------------------------|--------------------------|
@@ -120,7 +123,7 @@ flowchart TD
 | RF-13  | Consultar el historial de compras y el estado de los pedidos                       | Cliente                  |
 | RF-14  | Generar reportes de ventas                                                         | Administrador / Vendedor |
 
-# ⚙️ Requerimientos no funcionales
+## ⚙️ Requerimientos no funcionales
 
 | Código | Categoría          | Requisito                                                                                                                              | Criterio de cumplimiento                                                                                                       |
 |--------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
