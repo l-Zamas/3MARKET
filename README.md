@@ -84,6 +84,34 @@ En conclusión, estas dificultades reducen la competitividad de las PYMES frente
 
 Además, se usa Spring Security para la autenticación y la autorización por roles.
 
+#### 🗂️ Estructura de carpetas
+
+3market/
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/unipacifico/_3market/
+        │       ├── _3marketApplication.java      # Clase principal Spring Boot
+        │       │
+        │       ├── config/                       # Configuración (seguridad, web)
+        │       ├── controller/                   # C: reciben peticiones y devuelven vistas
+        │       ├── model/                        # M: entidades JPA
+        │       ├── repository/                   # M: acceso a datos
+        │       ├── service/                      # M: lógica de negocio
+        │       ├── dto/                          # Objetos de transferencia de datos
+        │       └── exception/                    # Manejo de errores
+        │
+        └── resources/
+            ├── fuentes/                          # Fuentes tipográficas (usadas en reportes)
+            ├── informes/                         # Informes generados o plantillas de informes
+            ├── jasper/                           # Plantillas JasperReports (.jrxml / .jasper)
+            ├── reportes/                         # Reportes de ventas
+            ├── static/                           # V: recursos estáticos
+            │   └── .gitkeep
+            ├── templates/                        # V: vistas Thymeleaf
+            │   └── .gitkeep
+            └── application.properties            # Conexión a MySQL y configuración
+
 # 📋 Requerimientos del sistema
 
 ## 🛠️ Requerimientos funcionales
