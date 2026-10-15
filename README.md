@@ -86,6 +86,7 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
 
 #### 🗂️ Estructura de carpetas
 
+```text
 3market/
 └── src/
     └── main/
@@ -103,7 +104,7 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
         │
         └── resources/
             ├── fuentes/                          # Fuentes tipográficas (usadas en reportes)
-            ├── informes/                         # Informes generados o plantillas de informes
+            ├── informes/                          # Informes generados o plantillas de informes
             ├── jasper/                           # Plantillas JasperReports (.jrxml / .jasper)
             ├── reportes/                         # Reportes de ventas
             ├── static/                           # V: recursos estáticos
@@ -111,6 +112,7 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
             ├── templates/                        # V: vistas Thymeleaf
             │   └── .gitkeep
             └── application.properties            # Conexión a MySQL y configuración
+```
 
 # 📋 Requerimientos del sistema
 
