@@ -84,24 +84,6 @@ En conclusión, estas dificultades reducen la competitividad de las PYMES frente
 
 Además, se usa Spring Security para la autenticación y la autorización por roles.
 
-### Ejemplo de flujo de una petición: un cliente agrega un producto al carrito
-
-```mermaid
-flowchart TD
-    A[Cliente / Navegador] -->|Petición HTTP| B[CartController]
-    B -->|Llama al servicio| C[CartService]
-    C -->|Valida reglas de negocio y stock| D{¿Hay stock disponible?}
-    D -->|Sí| E[CartItemRepository]
-    E -->|Guardar o consultar datos| F[(Base de datos MySQL)]
-    F -->|Devuelve resultado| E
-    E --> C
-    C --> B
-    B -->|Agrega datos al Model| G[Vista Thymeleaf: cart.html]
-    G -->|Respuesta HTML renderizada| A
-    D -->|No| H[Mostrar mensaje de error]
-    H --> G
-```
-
 # 📋 Requerimientos del sistema
 
 ## 🛠️ Requerimientos funcionales
