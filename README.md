@@ -118,9 +118,9 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
 
 ## 🛠️ Requerimientos funcionales
 
-| Código | Requisito funcional                                                                 | Rol principal            |
+| Código | Requerimiento funcional                                                             | Rol principal            |
 |--------|-------------------------------------------------------------------------------------|--------------------------|
-| RF-01  | Registrar clientes de forma autónoma                                                | Cliente                  |
+| RF-01  | Registrar clientes de forma autónoma                                               | Cliente                  |
 | RF-02  | Iniciar sesión con credenciales                                                    | Todos                    |
 | RF-03  | Recuperar contraseña                                                               | Todos                    |
 | RF-04  | Gestionar categorías de productos                                                  | Administrador            |
@@ -137,7 +137,7 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
 
 ## ⚙️ Requerimientos no funcionales
 
-| Código | Categoría          | Requisito                                                                                                                              | Criterio de cumplimiento                                                                                                       |
+| Código | Categoría          | Requerimiento                                                                                                                              | Criterio de cumplimiento                                                                                                       |
 |--------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | RNF-01 | **Usabilidad**     | La interfaz debe ser intuitiva y amigable, de modo que cualquier usuario pueda usar la plataforma sin capacitación previa.             | Un cliente puede registrarse, buscar un producto y completar una compra siguiendo el flujo de la interfaz, sin ayuda externa. |
 | RNF-02 | **Disponibilidad** | La plataforma debe estar disponible 24/7 para garantizar el acceso continuo a los usuarios.                                            | El sistema permanece accesible en todo momento, salvo mantenimientos programados y comunicados.                                |
