@@ -1,9 +1,9 @@
-# 🛒 **3MARKET - TIENDA VIRTUAL**
+#                                            **3MARKET - TIENDA VIRTUAL**
 
 <img width="1292" height="1218" alt="image" src="https://github.com/user-attachments/assets/69db7454-e57f-4ebe-ad25-3bbe57ff1880" />
 
 
-# 🛍️ ¿Qué es 3Market?
+# 🛒 ¿Qué es 3Market?
 
 **3Market** es una plataforma web de comercio electrónico (tienda virtual) que permite a los clientes explorar productos, agregarlos al carrito y realizar pedidos de manera rápida y segura. Al mismo tiempo ofrece a los administradores y vendedores herramientas para gestionar inventarios, categorías, clientes, pedidos y reportes de ventas.
 
