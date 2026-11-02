@@ -45,17 +45,17 @@ Además, se usa Spring Security para la autenticación y la autorización por ro
         │   └── com/unipacifico/_3market/
         │       ├── _3marketApplication.java      # Clase principal Spring Boot
         │       │
-        │       ├── config/                       # Configuración (seguridad, web)
+        │       ├── config/                       # Configuración general
         │       ├── controller/                   # C: reciben peticiones y devuelven vistas
         │       ├── model/                        # M: entidades JPA
         │       ├── repository/                   # M: acceso a datos
         │       ├── service/                      # M: lógica de negocio
         │       ├── dto/                          # Objetos de transferencia de datos
-        │       └── exception/                    # Manejo de errores
+        │       └── security/                     # Seguridad y autenticación
         │
         └── resources/
             ├── fuentes/                          # Fuentes tipográficas (usadas en reportes)
-            ├── informes/                          # Informes generados o plantillas de informes
+            ├── informes/                         # Informes generados o plantillas
             ├── jasper/                           # Plantillas JasperReports (.jrxml / .jasper)
             ├── reportes/                         # Reportes de ventas
             ├── static/                           # V: recursos estáticos
