@@ -1,7 +1,5 @@
 #                                            **3MARKET - TIENDA VIRTUAL**
 
-<img width="1292" height="1218" alt="image" src="https://github.com/user-attachments/assets/69db7454-e57f-4ebe-ad25-3bbe57ff1880" />
-
 
 # 🛒 ¿Qué es 3Market?
 
