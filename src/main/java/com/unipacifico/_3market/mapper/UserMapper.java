@@ -2,6 +2,7 @@ package com.unipacifico._3market.mapper;
 
 import com.unipacifico._3market.dto.RegisterDto;
 import com.unipacifico._3market.dto.UserDto;
+import com.unipacifico._3market.model.Role;
 import com.unipacifico._3market.model.User;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 @Component
 public class UserMapper {
 
-    public UserDto toDto(User user) {
+    public static UserDto toDto(User user) {
         Set<String> roles = user.getRoles().stream()
                 .map(role -> role.getName().name())
                 .collect(Collectors.toSet());
@@ -30,20 +31,22 @@ public class UserMapper {
                 .build();
     }
 
-    public List<UserDto> toDtoList(List<User> users) {
-        return users.stream().map(this::toDto).collect(Collectors.toList());
+    public static List<UserDto> toDtoList(List<User> users) {
+        return users.stream().map(UserMapper::toDto).collect(Collectors.toList());
     }
 
     // La contraseña (cifrada) y el rol los asigna el servicio
-    public User toEntity(RegisterDto dto) {
+    public static User toEntity(RegisterDto dto, String encodedPassword, Set<Role> roles) {
         return User.builder()
                 .username(dto.getUsername())
                 .email(dto.getEmail())
                 .nombre(dto.getNombre())
+                .password(encodedPassword)
                 .apellido(dto.getApellido())
                 .identificacion(dto.getIdentificacion())
                 .telefono(dto.getTelefono())
                 .direccion(dto.getDireccion())
+                .roles(roles)
                 .build();
     }
 }
