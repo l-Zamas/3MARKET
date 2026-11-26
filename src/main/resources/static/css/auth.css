@@ -1,0 +1,286 @@
+/* Variables de color y tipografía */
+:root {
+  --blue: #0a58ca;
+  --blue-hover: #084298;
+  --teal: #10b981;
+  --dark-bg: #111322;
+  --dark-navy: #141432;
+  --text-main: #181838;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --bg-page: #eef3f8;
+}
+
+/* Contenedor principal de la página */
+body.auth-page {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Tarjeta principal */
+.auth-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(17, 19, 34, 0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* Panel Izquierdo (Branding y Badges) */
+.auth-left {
+  background: linear-gradient(160deg, #0f176b 0%, var(--dark-bg) 100%);
+  color: #ffffff;
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.auth-logo-wrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: auto 0;
+}
+
+.auth-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 290px;
+  object-fit: contain;
+}
+
+/* Insignias inferiores (Compra segura, Envíos, Ofertas) */
+.auth-trust-badges {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.trust-badge i {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  margin-bottom: 0.4rem;
+}
+
+.trust-badge small {
+  color: #94a3b8;
+  font-size: 0.68rem;
+}
+
+/* Panel Derecho (Formularios) */
+.auth-right {
+  padding: 2.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Avatar circular superior en Registro */
+.auth-avatar-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.auth-avatar-badge i {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.auth-title {
+  font-weight: 800;
+  color: var(--text-main);
+  text-align: center;
+  font-size: 1.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.75rem;
+}
+
+.brand-highlight {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* Campos de formulario con icono izquierdo y ojo derecho */
+.form-field-icon {
+  position: relative;
+}
+
+.form-field-icon .field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.form-field-icon .form-control {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 0.92rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field-icon .form-control:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(10, 88, 202, 0.15);
+}
+
+.eye-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+.eye-toggle:hover {
+  color: var(--text-main);
+}
+
+/* Enlaces y botones */
+.forgot-link {
+  font-size: 0.82rem;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.btn-auth-primary {
+  background-color: var(--blue);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  height: 44px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-auth-primary:hover {
+  background-color: var(--blue-hover);
+  color: #ffffff;
+}
+
+.btn-auth-secondary {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-weight: 600;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-auth-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #cbd5e1;
+  color: var(--text-main);
+}
+
+/* Divisor "o" */
+.divider-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.82rem;
+  margin: 1.15rem 0;
+}
+
+.divider-or::before,
+.divider-or::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.divider-or:not(:empty)::before {
+  margin-right: 0.75rem;
+}
+
+.divider-or:not(:empty)::after {
+  margin-left: 0.75rem;
+}
+
+/* Pie de formulario */
+.auth-footer-text {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.auth-footer-text a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividad móvil */
+@media (max-width: 767.98px) {
+  .auth-right {
+    padding: 2rem 1.5rem;
+  }
+  .auth-left {
+    padding: 2rem 1.25rem;
+  }
+  .auth-logo {
+    max-height: 180px;
+  }
+}

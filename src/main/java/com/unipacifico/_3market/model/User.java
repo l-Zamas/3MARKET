@@ -1,6 +1,8 @@
 package com.unipacifico._3market.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.HashSet;
@@ -24,6 +26,8 @@ public class User {
     private String username;
 
     @Column(nullable = false, unique = true, length = 100)
+    @NotBlank(message = "El correo es obligatorio")
+    @Email(message = "Ingresa un correo electrónico válido")
     private String email;
 
     @Column(nullable = false)

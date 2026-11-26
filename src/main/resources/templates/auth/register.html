@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="~{fragments/nav :: head-includes}"/>
+  <link rel="stylesheet" th:href="@{/css/auth.css}"/>
+  <title>Crear Cuenta – 3Market</title>
+</head>
+<body class="auth-page">
+
+<div class="auth-card">
+  <div class="row g-0 h-100">
+
+    <!-- Lado izquierdo: Logo -->
+    <div class="col-md-5 auth-left">
+      <div class="auth-logo-wrapper">
+        <img th:src="@{/images/logo_3market.png}" alt="3MARKET" class="auth-logo"/>
+      </div>
+
+      <div class="auth-trust-badges">
+        <div class="trust-badge">
+          <i class="bi bi-shield-fill-check"></i>
+          <span>Compra segura<br><small>Tus datos protegidos</small></span>
+        </div>
+        <div class="trust-badge">
+          <i class="bi bi-truck"></i>
+          <span>Envíos rápidos<br><small>A donde estés</small></span>
+        </div>
+        <div class="trust-badge">
+          <i class="bi bi-star-fill"></i>
+          <span>Mejores ofertas<br><small>Siempre para ti</small></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado derecho: Formulario -->
+    <div class="col-md-7 auth-right">
+      <div class="text-center mb-3">
+        <div class="auth-avatar-badge">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <h2 class="auth-title">Crear cuenta</h2>
+        <p class="auth-subtitle mb-0">Únete a <span class="brand-highlight">3Market</span> y disfruta de los mejores productos</p>
+      </div>
+
+      <div th:if="${error}" class="alert alert-danger py-2" th:text="${error}"></div>
+
+      <form th:action="@{/auth/register}" method="post" th:object="${registerDto}">
+        
+        <div class="row g-2 mb-3">
+          <div class="col-sm-6 form-field-icon">
+            <i class="bi bi-person field-icon"></i>
+            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Nombre" required/>
+            <div class="text-danger small mt-1"
+                th:if="${#fields.hasErrors('nombre')}"
+                th:errors="*{nombre}">
+            </div>  
+          </div>
+
+          <div class="col-sm-6 form-field-icon">
+            <i class="bi bi-person field-icon"></i>
+            <input type="text" th:field="*{apellido}" class="form-control" placeholder="Apellido" required/>
+            <div class="text-danger small mt-1"
+                th:if="${#fields.hasErrors('apellido')}"
+                th:errors="*{apellido}">
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2 mb-3">
+          <div class="col-sm-6 form-field-icon">
+            <i class="bi bi-card-text field-icon"></i>
+            <input type="text" th:field="*{identificacion}" class="form-control" placeholder="Cédula / Identificación" required/>
+            <div class="text-danger small mt-1"
+                th:if="${#fields.hasErrors('identificacion')}"
+                th:errors="*{identificacion}">
+            </div>
+          </div>
+          
+          <div class="col-sm-6 form-field-icon">
+            <i class="bi bi-telephone field-icon"></i>
+            <input type="tel" th:field="*{telefono}" class="form-control" placeholder="Teléfono" required/>
+            <div class="text-danger small mt-1"
+                th:if="${#fields.hasErrors('telefono')}"
+                th:errors="*{telefono}">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 form-field-icon">
+          <i class="bi bi-geo-alt field-icon"></i>
+          <input type="text" th:field="*{direccion}" class="form-control" placeholder="Dirección" required/>
+          <div class="text-danger small mt-1"
+              th:if="${#fields.hasErrors('direccion')}"
+              th:errors="*{direccion}">
+          </div>
+        </div>
+
+        <div class="mb-3 form-field-icon">
+          <i class="bi bi-at field-icon"></i>
+          <input type="text" th:field="*{username}" class="form-control" placeholder="Usuario" required/>
+          <div class="text-danger small mt-1"
+              th:if="${#fields.hasErrors('username')}"
+              th:errors="*{username}">
+          </div>
+        </div>
+
+        <div class="mb-3 form-field-icon">
+          <i class="bi bi-envelope field-icon"></i>
+          <input type="email" th:field="*{email}" class="form-control" placeholder="Correo electrónico" required/>
+        
+        <div class="text-danger small mt-1"
+            th:if="${#fields.hasErrors('email')}"
+            th:errors="*{email}">
+        </div>        
+        </div>
+
+        <div class="mb-3 form-field-icon">
+          <i class="bi bi-lock field-icon"></i>
+          <input type="password" th:field="*{password}" id="regPass" class="form-control"
+                placeholder="Contraseña (mín. 8 caracteres)" required minlength="8"/>
+          <button type="button" class="eye-toggle" onclick="togglePass('regPass', this)">
+            <i class="bi bi-eye-slash"></i>
+          </button>
+          <div class="text-danger small mt-1"
+              th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-auth-primary w-100">Registrarme</button>
+      </form>
+
+      <div class="divider-or">o</div>
+
+      <p class="auth-footer-text">
+        ¿Ya tienes una cuenta?
+        <a th:href="@{/auth/login}" class="fw-semibold">Inicia sesión</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<th:block th:replace="~{fragments/nav :: scripts}"/>
+<script th:src="@{/js/auth.js}"></script>
+</body>
+</html>

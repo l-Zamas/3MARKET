@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="~{fragments/nav :: head-includes}"/>
+  <link rel="stylesheet" th:href="@{/css/auth.css}"/>
+  <title>Iniciar Sesión – 3Market</title>
+</head>
+<body class="auth-page">
+
+  
+<div class="auth-card">
+  
+  <div class="row g-0 h-100">
+
+    <!-- Lado izquierdo: Logo y confianza -->
+    <div class="col-md-5 auth-left">
+      <div class="auth-logo-wrapper">
+        <img th:src="@{/images/logo_3market.png}" alt="3MARKET" class="auth-logo"/>
+      </div>
+
+      <div class="auth-trust-badges">
+        <div class="trust-badge">
+          <i class="bi bi-shield-fill-check"></i>
+          <span>Compra segura<br><small>Tus datos protegidos</small></span>
+        </div>
+        <div class="trust-badge">
+          <i class="bi bi-truck"></i>
+          <span>Envíos rápidos<br><small>A donde estés</small></span>
+        </div>
+        <div class="trust-badge">
+          <i class="bi bi-star-fill"></i>
+          <span>Mejores ofertas<br><small>Siempre para ti</small></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado derecho: Formulario -->
+    <div class="col-md-7 auth-right">
+      <h2 class="auth-title">Iniciar sesión</h2>
+      <p class="auth-subtitle">Ingresa con tu cuenta de <span class="brand-highlight">3Market</span></p>
+
+      <div th:if="${param.error}" class="alert alert-danger py-2">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>Usuario o contraseña incorrectos.
+      </div>
+      <div th:if="${param.logout}" class="alert alert-success py-2">
+        <i class="bi bi-check-circle-fill me-2"></i>Sesión cerrada correctamente.
+      </div>
+      <div th:if="${param.success}" class="alert alert-success py-2">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <span th:text="${param.success}"></span>
+      </div>      
+
+      <form th:action="@{/auth/login}" method="post">
+        <div class="mb-3 form-field-icon">
+          <i class="bi bi-person field-icon"></i>
+          <input type="text" name="username" class="form-control"
+            placeholder="Correo electrónico o usuario" required autofocus/>
+        </div>
+        <div class="mb-1 form-field-icon">
+          <i class="bi bi-lock field-icon"></i>
+          <input type="password" name="password" id="loginPass" class="form-control"
+            placeholder="Contraseña" required/>
+          <button type="button" class="eye-toggle" onclick="togglePass('loginPass', this)">
+            <i class="bi bi-eye-slash"></i>
+          </button>
+        </div>
+        <div class="text-end mb-3">
+          <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="btn btn-auth-primary w-100">Iniciar sesión</button>
+      </form>
+
+      <div class="divider-or">o</div>
+
+      <a th:href="@{/auth/register}" class="btn btn-auth-secondary w-100">Registrarme</a>
+
+      <p class="auth-footer-text mt-3">
+        ¿Eres nuevo en <span class="brand-highlight">3Market</span>?
+        <a th:href="@{/auth/register}">Crea tu cuenta</a>
+        para poder facturar tus compras, o
+        <a th:href="@{/catalog}">ve directo al catálogo</a> a mirar productos.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<th:block th:replace="~{fragments/nav :: scripts}"/>
+<script th:src="@{/js/auth.js}"></script>
+</body>
+</html>
